@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Jobs - 🚀 Launch Your Dream</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                🚀 Launch Your Dream
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/explore" class="active">Jobs</a></li>
+                <li><a href="/applications">Applications</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Coach</a></li>
+                <li><a href="#">Guide</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="/post" class="btn-outline">For Employers</a>
+                <a href="/explore" class="btn-filled active">For Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Explorer -->
+    <main class="container">
+        <div class="explore-header">
+            <h1>Explore Jobs</h1>
+            <p>Discover exciting opportunities at innovative startups</p>
+            
+            <div class="filter-container">
+                <label for="jobTypeFilter">Filter by Job Type:</label>
+                <select id="jobTypeFilter">
+                    <option value="">All Jobs</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="jobsContainer" class="jobs-container">
+            <!-- Jobs will be dynamically loaded here -->
+        </div>
+        
+        <div id="noJobsMessage" class="no-jobs-message" style="display: none;">
+            <h3>No jobs found</h3>
+            <p>There are currently no jobs matching your criteria. Check back later or try adjusting your filters.</p>
+            <a href="/post" class="btn-primary">Post a Job</a>
+        </div>
+        
+        <div id="loadingMessage" class="loading-message">
+            <div class="spinner"></div>
+            <p>Loading jobs...</p>
+        </div>
+    </main>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Apply for <span id="modalJobTitle"></span></h3>
+            <form id="applicationForm" class="application-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="applicantName">Your Name *</label>
+                    <input type="text" id="applicantName" name="applicantName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantEmail">Email *</label>
+                    <input type="email" id="applicantEmail" name="applicantEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantPhone">Phone (optional)</label>
+                    <input type="tel" id="applicantPhone" name="applicantPhone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantMessage">Why are you interested in this role?</label>
+                    <textarea id="applicantMessage" name="applicantMessage" rows="4" placeholder="Tell us about your interest and relevant experience..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resume">Resume * (PDF or DOC)</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    <small>Maximum file size: 5MB. Accepted formats: PDF, DOC, DOCX</small>
+                </div>
+                
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/explore.js"></script>
+</body>
+</html> 

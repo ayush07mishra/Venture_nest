@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - 🚀 Launch Your Dream</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                🚀 Launch Your Dream
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/explore">Jobs</a></li>
+                <li><a href="/applications">Applications</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Coach</a></li>
+                <li><a href="#">Guide</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="/post" class="btn-outline active">For Employers</a>
+                <a href="/explore" class="btn-filled">For Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Posting Form -->
+    <main class="container">
+        <div class="form-container">
+            <h1>Post a Job</h1>
+            <p class="form-subtitle">Share your job opportunity with talented professionals</p>
+            
+            <form id="jobForm" class="job-form">
+                <div class="form-group">
+                    <label for="jobTitle">Job Title *</label>
+                    <input type="text" id="jobTitle" name="jobTitle" required placeholder="e.g., Frontend Developer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jobType">Job Type *</label>
+                    <select id="jobType" name="jobType" required>
+                        <option value="">Select job type</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Freelance">Freelance</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyName">Company Name *</label>
+                    <input type="text" id="companyName" name="companyName" required placeholder="e.g., TechStartup Inc.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., San Francisco, CA or Remote">
+                </div>
+                
+                <div class="form-group">
+                    <label for="salary">Salary Range</label>
+                    <input type="text" id="salary" name="salary" placeholder="e.g., $50,000 - $80,000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jobDescription">Job Description *</label>
+                    <textarea id="jobDescription" name="jobDescription" rows="8" required placeholder="Describe the role, responsibilities, requirements, and what makes your company special..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Post Job</button>
+            </form>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h3>✅ Job Posted Successfully!</h3>
+                <p>Your job has been posted and is now visible to job seekers. You can view all posted jobs and applications on the explore page.</p>
+                <div class="success-actions">
+                    <a href="/explore" class="btn-outline">View All Jobs</a>
+                    <a href="/applications" class="btn-primary">View Applications</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/post.js"></script>
+</body>
+</html> 

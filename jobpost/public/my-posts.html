@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recent Posts - 🚀 Launch Your Dream</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                🚀 Launch Your Dream
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/explore">Jobs</a></li>
+                <li><a href="/applications">Applications</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Coach</a></li>
+                <li><a href="#">Guide</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="/post" class="btn-outline active">For Employers</a>
+                <a href="/explore" class="btn-filled">For Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- My Recent Posts -->
+    <main class="container">
+        <div class="my-posts-header">
+            <h1>My Recent Posts</h1>
+            <p>Manage your job postings and view applications</p>
+            <a href="/post" class="btn-primary">Post New Job</a>
+        </div>
+        
+        <div id="myPostsContainer" class="my-posts-container">
+            <!-- Job posts will be dynamically loaded here -->
+        </div>
+        
+        <div id="noPostsMessage" class="no-posts-message" style="display: none;">
+            <h3>No job posts found</h3>
+            <p>You haven't posted any jobs yet. Start by posting your first job opportunity!</p>
+            <a href="/post" class="btn-primary">Post Your First Job</a>
+        </div>
+        
+        <div id="loadingMessage" class="loading-message">
+            <div class="spinner"></div>
+            <p>Loading your job posts...</p>
+        </div>
+    </main>
+
+    <!-- Job Details Modal -->
+    <div id="jobDetailsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="jobDetails">
+                <!-- Job details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Applications Modal -->
+    <div id="applicationsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Applications for <span id="modalJobTitle"></span></h3>
+            <div id="applicationsList">
+                <!-- Applications will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/my-posts.js"></script>
+</body>
+</html> 
