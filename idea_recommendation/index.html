@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Your Dream – Project Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="white"/>
+                    <path d="M12 16L13.09 22.26L20 23L13.09 23.74L12 30L10.91 23.74L4 23L10.91 22.26L12 16Z" fill="white"/>
+                </svg>
+            </div>
+            <h1 class="main-title">Launch Your Dream</h1>
+            <p class="subtitle">The All-In-One Project Recommendation Engine</p>
+            <p class="description">Get personalized project ideas based on your technology preferences, domain interests, and experience level.</p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-card">
+            <div class="form-header">
+                <div class="star-icon">⭐</div>
+                <h2>Tell us about your interests</h2>
+            </div>
+            
+            <form id="preferencesForm">
+                <div class="dropdowns-container">
+                    <div class="dropdown-group">
+                        <label for="technology">Preferred Technology</label>
+                        <select id="technology" name="Preferred_technologies" required>
+                            <option value="">Select technology</option>
+                            <option value="AI">AI</option>
+                            <option value="API Design">API Design</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="APIs">APIs</option>
+                            <option value="AR/VR">AR/VR</option>
+                            <option value="AR/VR Development">AR/VR Development</option>
+                            <option value="Blockchain">Blockchain</option>
+                            <option value="Chatbot Development">Chatbot Development</option>
+                            <option value="Cloud Computing">Cloud Computing</option>
+                            <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                            <option value="Content Development">Content Development</option>
+                            <option value="Content Management">Content Management</option>
+                            <option value="Cryptography">Cryptography</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Data Analytics">Data Analytics</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Data Security">Data Security</option>
+                            <option value="Database Management">Database Management</option>
+                            <option value="Drone">Drone</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="GIS">GIS</option>
+                            <option value="GPS">GPS</option>
+                            <option value="Gamification">Gamification</option>
+                            <option value="IoT">IoT</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="Mobile App">Mobile App</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="NLP">NLP</option>
+                            <option value="No-Code">No-Code</option>
+                            <option value="Payment Systems">Payment Systems</option>
+                            <option value="Payments">Payments</option>
+                            <option value="SEO">SEO</option>
+                            <option value="Smart Contracts">Smart Contracts</option>
+                            <option value="Streaming">Streaming</option>
+                            <option value="Sustainability">Sustainability</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="UX">UX</option>
+                            <option value="Web">Web</option>
+                            <option value="Web Development">Web Development</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown-group">
+                        <label for="domain">Domain</label>
+                        <select id="domain" name="Domain" required>
+                            <option value="">Select domain</option>
+                            <option value="AI">AI</option>
+                            <option value="AR">AR</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Analytics">Analytics</option>
+                            <option value="App">App</option>
+                            <option value="Audio">Audio</option>
+                            <option value="Automation">Automation</option>
+                            <option value="Boutique">Boutique</option>
+                            <option value="Builder">Builder</option>
+                            <option value="CRM">CRM</option>
+                            <option value="Checkout">Checkout</option>
+                            <option value="Climate">Climate</option>
+                            <option value="Clinic">Clinic</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Community">Community</option>
+                            <option value="Crafts">Crafts</option>
+                            <option value="Crypto">Crypto</option>
+                            <option value="Data">Data</option>
+                            <option value="Drone">Drone</option>
+                            <option value="Education">Education</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Farming">Farming</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Green">Green</option>
+                            <option value="Group">Group</option>
+                            <option value="Health">Health</option>
+                            <option value="Investment">Investment</option>
+                            <option value="IoT">IoT</option>
+                            <option value="Irrigation">Irrigation</option>
+                            <option value="Language">Language</option>
+                            <option value="Lending">Lending</option>
+                            <option value="Literacy">Literacy</option>
+                            <option value="Marketplace">Marketplace</option>
+                            <option value="Media">Media</option>
+                            <option value="Music">Music</option>
+                            <option value="Niche">Niche</option>
+                            <option value="Nomad">Nomad</option>
+                            <option value="Nutrients">Nutrients</option>
+                            <option value="Online">Online</option>
+                            <option value="Outdoor">Outdoor</option>
+                            <option value="Planner">Planner</option>
+                            <option value="Portal">Portal</option>
+                            <option value="Prototyping">Prototyping</option>
+                            <option value="Quest">Quest</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Safety">Safety</option>
+                            <option value="Security">Security</option>
+                            <option value="Seniors">Seniors</option>
+                            <option value="Solo">Solo</option>
+                            <option value="Tasks">Tasks</option>
+                            <option value="Telehealth">Telehealth</option>
+                            <option value="Tools">Tools</option>
+                            <option value="Tracker">Tracker</option>
+                            <option value="Trends">Trends</option>
+                            <option value="Triage">Triage</option>
+                            <option value="Tutor">Tutor</option>
+                            <option value="Urban">Urban</option>
+                            <option value="Video">Video</option>
+                            <option value="Wallet">Wallet</option>
+                            <option value="Waste">Waste</option>
+                            <option value="Websites">Websites</option>
+                            <option value="Wellness">Wellness</option>
+                            <option value="Workout">Workout</option>
+                            <option value="Youth">Youth</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown-group">
+                        <label for="experience">Experience Level</label>
+                        <select id="experience" name="Experience_level" required>
+                            <option value="">Select level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown-group">
+                        <label for="budget">Budget</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select budget</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Get My Project Ideas</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section" style="display: none;">
+            <h2>Your Personalized Project Ideas</h2>
+            <div id="projectCards" class="project-cards"></div>
+        </div>
+
+        <!-- Loading Section -->
+        <div id="loading" class="loading-section" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Finding the perfect projects for you...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
