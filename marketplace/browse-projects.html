@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects - VentureNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>VentureNest</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Jobs</a>
+                <a href="index.html" class="nav-link active">Marketplace</a>
+                <a href="#" class="nav-link">Community</a>
+                <a href="#" class="nav-link">Coach</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Guide <i class="fas fa-chevron-down"></i></a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="post-project.html" class="btn btn-primary">Post Project</a>
+                <a href="#" class="btn btn-signin">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Browse Projects</h1>
+            
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-filters">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search projects...">
+                    </div>
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">All Categories</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="mobile-apps">Mobile Apps</option>
+                        <option value="design-templates">Design Templates</option>
+                        <option value="ai-ml">AI & Machine Learning</option>
+                        <option value="e-commerce">E-commerce</option>
+                        <option value="saas-tools">SaaS Tools</option>
+                        <option value="plugins-extensions">Plugins & Extensions</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="priceFilter" class="form-select">
+                        <option value="">All Prices</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project Card 1 -->
+                <div class="project-card" data-category="web-development" data-price="49">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$49</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SaaS Landing Page Template</h3>
+                        <p class="project-creator">by DesignPro</p>
+                        <p class="project-description">Complete React landing page with pricing, features, and testimonials</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Landing Page</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>234</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('SaaS Landing Page Template', 49)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" data-category="ai-ml" data-price="129">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$129</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Chatbot Integration Kit</h3>
+                        <p class="project-creator">by CodeWizard</p>
+                        <p class="project-description">Ready-to-use chatbot with OpenAI integration and customizable UI</p>
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Chatbot</span>
+                            <span class="tag">No-Code</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>189</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('AI Chatbot Integration Kit', 129)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" data-category="mobile-apps" data-price="199">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$199</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Mobile App</h3>
+                        <p class="project-creator">by AppMakers</p>
+                        <p class="project-description">Complete mobile app template with payment integration</p>
+                        <div class="project-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">React Native</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>156</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('E-commerce Mobile App', 199)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card" data-category="design-templates" data-price="79">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$79</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website Template</h3>
+                        <p class="project-creator">by CreativeStudio</p>
+                        <p class="project-description">Modern portfolio template with dark/light mode and animations</p>
+                        <div class="project-tags">
+                            <span class="tag">Portfolio</span>
+                            <span class="tag">Responsive</span>
+                            <span class="tag">Modern</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>312</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('Portfolio Website Template', 79)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card" data-category="saas-tools" data-price="149">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$149</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management Dashboard</h3>
+                        <p class="project-creator">by DevTeam</p>
+                        <p class="project-description">Full-stack task management system with real-time updates</p>
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Full-stack</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>98</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('Task Management Dashboard', 149)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card" data-category="e-commerce" data-price="89">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$89</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Online Store Template</h3>
+                        <p class="project-creator">by ShopBuilder</p>
+                        <p class="project-description">Complete e-commerce template with shopping cart and payment</p>
+                        <div class="project-tags">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Shopping Cart</span>
+                            <span class="tag">Payment</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>267</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('Online Store Template', 89)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div class="project-card" data-category="plugins-extensions" data-price="39">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$39</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">WordPress Analytics Plugin</h3>
+                        <p class="project-creator">by WPExperts</p>
+                        <p class="project-description">Advanced analytics plugin for WordPress with custom dashboards</p>
+                        <div class="project-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Plugin</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>145</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('WordPress Analytics Plugin', 39)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 8 -->
+                <div class="project-card" data-category="web-development" data-price="169">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                        <span class="price-tag">$169</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media Dashboard</h3>
+                        <p class="project-creator">by SocialPro</p>
+                        <p class="project-description">Multi-platform social media management dashboard</p>
+                        <div class="project-tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Management</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                            </div>
+                            <div class="views">
+                                <i class="fas fa-eye"></i>
+                                <span>78</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" onclick="buyProject('Social Media Dashboard', 169)">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-outline btn-large" onclick="loadMoreProjects()">
+                    <i class="fas fa-plus"></i>
+                    Load More Projects
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Your Project - VentureNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>VentureNest</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Jobs</a>
+                <a href="index.html" class="nav-link active">Marketplace</a>
+                <a href="#" class="nav-link">Community</a>
+                <a href="#" class="nav-link">Coach</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Guide <i class="fas fa-chevron-down"></i></a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="browse-projects.html" class="btn btn-secondary">Browse Projects</a>
+                <a href="#" class="btn btn-signin">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="page-title">Post Your Project</h1>
+                <p style="text-align: center; color: #64748b; margin-bottom: 30px;">
+                    Share your amazing project with the world and start earning from your creativity
+                </p>
+
+                <form id="postProjectForm">
+                    <!-- Basic Information -->
+                    <div class="form-group">
+                        <label for="projectTitle" class="form-label">Project Title *</label>
+                        <input type="text" id="projectTitle" class="form-input" placeholder="Enter your project title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectDescription" class="form-label">Project Description *</label>
+                        <textarea id="projectDescription" class="form-textarea" placeholder="Describe your project in detail. What does it do? What technologies does it use? What makes it special?" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectCategory" class="form-label">Category *</label>
+                            <select id="projectCategory" class="form-select" required>
+                                <option value="">Select a category</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-apps">Mobile Apps</option>
+                                <option value="design-templates">Design Templates</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="e-commerce">E-commerce</option>
+                                <option value="saas-tools">SaaS Tools</option>
+                                <option value="plugins-extensions">Plugins & Extensions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectPrice" class="form-label">Price (USD) *</label>
+                            <input type="number" id="projectPrice" class="form-input" placeholder="0.00" min="0" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-group">
+                        <label for="projectTags" class="form-label">Tags</label>
+                        <input type="text" id="projectTags" class="form-input" placeholder="Enter tags separated by commas (e.g., React, SaaS, Landing Page)">
+                        <small style="color: #64748b; font-size: 14px;">Tags help buyers find your project</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectTechnologies" class="form-label">Technologies Used</label>
+                        <input type="text" id="projectTechnologies" class="form-input" placeholder="e.g., React, Node.js, MongoDB, AWS">
+                    </div>
+
+                    <!-- Media Upload -->
+                    <div class="form-group">
+                        <label for="projectImages" class="form-label">Project Images</label>
+                        <input type="file" id="projectImages" class="form-input" accept="image/*" multiple>
+                        <small style="color: #64748b; font-size: 14px;">Upload screenshots or demo images of your project (max 5 images)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectDemo" class="form-label">Demo URL</label>
+                        <input type="url" id="projectDemo" class="form-input" placeholder="https://your-project-demo.com">
+                        <small style="color: #64748b; font-size: 14px;">Link to a live demo of your project</small>
+                    </div>
+
+                    <!-- Project Files -->
+                    <div class="form-group">
+                        <label for="projectFiles" class="form-label">Project Files</label>
+                        <input type="file" id="projectFiles" class="form-input" multiple>
+                        <small style="color: #64748b; font-size: 14px;">Upload your project files (ZIP, RAR, or individual files)</small>
+                    </div>
+
+                    <!-- Documentation -->
+                    <div class="form-group">
+                        <label for="projectDocumentation" class="form-label">Documentation</label>
+                        <textarea id="projectDocumentation" class="form-textarea" placeholder="Provide setup instructions, usage guide, or any additional documentation for buyers"></textarea>
+                    </div>
+
+                    <!-- Creator Information -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="creatorName" class="form-label">Creator Name *</label>
+                            <input type="text" id="creatorName" class="form-input" placeholder="Your name or company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="creatorEmail" class="form-label">Contact Email *</label>
+                            <input type="email" id="creatorEmail" class="form-input" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creatorWebsite" class="form-label">Website (Optional)</label>
+                        <input type="url" id="creatorWebsite" class="form-input" placeholder="https://your-website.com">
+                    </div>
+
+                    <!-- License and Terms -->
+                    <div class="form-group">
+                        <label for="projectLicense" class="form-label">License Type</label>
+                        <select id="projectLicense" class="form-select">
+                            <option value="commercial">Commercial License</option>
+                            <option value="personal">Personal License</option>
+                            <option value="mit">MIT License</option>
+                            <option value="gpl">GPL License</option>
+                            <option value="custom">Custom License</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectTerms" class="form-label">Terms & Conditions</label>
+                        <textarea id="projectTerms" class="form-textarea" placeholder="Any specific terms or conditions for using your project"></textarea>
+                    </div>
+
+                    <!-- Additional Features -->
+                    <div class="form-group">
+                        <label class="form-label">Additional Features</label>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="featureSupport">
+                                <span>Technical Support</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="featureUpdates">
+                                <span>Free Updates</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="featureCustomization">
+                                <span>Customization Service</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="featureSourceCode">
+                                <span>Source Code Included</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-upload"></i>
+                            Post Project
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
